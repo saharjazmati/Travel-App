@@ -3,6 +3,7 @@ const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const sass = require("node-sass");
 const WorkboxPlugin = require("workbox-webpack-plugin");
+const { SourceMapDevToolPlugin } = require("webpack");
 
 module.exports = {
   entry: "./src/client/index.js",
@@ -17,6 +18,11 @@ module.exports = {
   },
   module: {
     rules: [
+        {
+            test: /\.js$/,
+            enforce: 'pre',
+            use: ['source-map-loader'],
+          },
       {
         test: "/.js$/",
         exclude: /node_modules/,
@@ -57,5 +63,8 @@ module.exports = {
       filename: "./index.html",
     }),
     new WorkboxPlugin.GenerateSW(),
+    new SourceMapDevToolPlugin({
+        filename: "[file].map"
+      }),
   ],
 };
