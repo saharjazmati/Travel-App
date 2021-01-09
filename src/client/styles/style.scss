@@ -1,0 +1,110 @@
+body {
+    background: #e2b0d6;
+    font-family: Arial, Helvetica, sans-serif;
+  
+    #trip {
+      display: grid;
+      grid-auto-rows: minmax(60px, auto);
+      grid-template-columns: auto;
+      font-size: 18px;
+      justify-content:center ;
+      align-content:center ;
+      //border: 2px solid #9b0d7a;
+    }
+
+    #newEntry {
+      display: block;
+      grid-area: main;
+      justify-content: center;
+    }
+
+    label {
+      display: block;
+      font-size: 30px;
+      color: #49073a;
+      padding: 5px;
+    }
+
+    input, textarea {
+      display: block;
+      height: 60px;
+      width: 320px;
+      background:white;
+      color:  #49073a;
+      font-size: 22px;
+      border: 3px solid ;
+      margin: 5px;
+    }
+  
+    button {
+      //display: block;
+      width: 200px;
+      height: 75px;
+      background: #49073a;
+      color: #e2b0d6;
+      font-size: 25px;
+      border: 1px solid #e2b0d6;
+      box-shadow: 2px 4px 5px #49073a;
+      margin: auto;
+      margin-top: 2em;
+      display: block;
+      
+    }
+    button:hover {
+      background-color:#8b146f;
+      cursor: pointer;
+    }
+    h1 {
+      font-size: 40px;
+      color: #49073a
+    }
+  
+    /*textarea {
+      background: #22b2da;
+      color: #f0d43a;
+      font-size: 20px;
+      font-family: "Oswald", sans-serif;
+      position: relative;
+      margin-bottom: -2em;
+    }*/
+    /* Reset style for HTML element on active to have no border*/
+    input:focus,
+    select:focus,
+    textarea:focus,
+    button:focus {
+      outline: none;
+    }
+    /* Style for Placeholder Text*/
+    ::placeholder {
+      /* Firefox, Chrome, Opera */
+      color: #da9acb;
+      //font-family: "Oswald", sans-serif;
+    }
+  
+    :-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #e2b0d6;
+     // font-family: "Oswald", sans-serif;
+    }
+  
+    ::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #e2b0d6;
+    //  font-family: "Oswald", sans-serif;
+    }
+  }
+  
+  @media (min-width: 901px) {
+    #trip {
+      display: grid;
+      grid-auto-rows: minmax(50px, auto);
+      grid-template-columns: auto;
+      grid-template-areas: "main main main";
+      font-size: 25px;
+      align-items: center;
+      justify-content:space-between ;
+      align-content:space-between  ;
+
+    }
+  }
+  
