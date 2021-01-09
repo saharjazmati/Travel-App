@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Travel Application</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald:400,600,700|Ranga:400,700&display=swap"rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="headline">
+    My Travel Planner
+    </div>
+    <section id="newEntry">
+      <div id="trip">
+        <div class="city">
+          <label for="city"> Your Destination: </label>
+          <input type="text" id="city" placeholder="Destination city" />
+        </div>
+        <div class="Ddate">
+          <label for="date">Your departure date:</label>
+          <input type="date" class="dates" />
+        </div>
+        <div class="Rdate">
+          <label for="date">Your return date:</label>
+          <input type="date" class="dates" />
+        </div>
+      </div>
+      <button id="done" type="submit">Submit</button>
+    </section>
+    <div class="myTrip">
+      <div id="tripInfo"></div>
+      <div id="details"></div>
+      <img id="image" />
+    </div>
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
+  </body>
+</html>
