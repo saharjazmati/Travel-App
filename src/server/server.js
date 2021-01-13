@@ -1,28 +1,28 @@
-
 let projectData = [];
 const express = require("express");
-// Start up an instance of app
+// Start up an instance
 const app = express();
-/* Middleware*/
+// Middleware
 const bodyParser = require("body-parser");
-//Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-// Cors for cross origin allowance
+
 const cors = require("cors");
 app.use(cors());
-// Initialize the dist folder
+
+// Initialize dist folder
 app.use(express.static("dist"));
-// Setup Server
+
+// Setup the Server on 3030 port
 const port = 3030;
 const server = app.listen(port, () => {
   console.log(`running on port: ${port}`);
 });
-// Get route
+// setup Get route
 app.get("/data", (req, res) => {
   res.send(projectData);
 });
-// Geonames Post route
+// setup Geonames Post route
 app.post("/geonames", (req, res) => {
   dataGeonames = {
     latitude: req.body.latitude,
@@ -31,7 +31,7 @@ app.post("/geonames", (req, res) => {
   projectData.push(dataGeonames);
   res.send(projectData);
 });
-// WeatherBit Post Route
+// setup weatherBit Post Route
 app.post("/weatherbit", (req, res) => {
   dataWeatherbit = {
     high: req.body.high,
@@ -41,7 +41,7 @@ app.post("/weatherbit", (req, res) => {
   projectData.push(dataWeatherbit);
   res.send(projectData);
 });
-// Pixabay Post Route
+// setup pixabay Post Route
 app.post("/pixabay", (req, res) => {
   dataPixabay = {
     image: req.body.image,
@@ -49,5 +49,5 @@ app.post("/pixabay", (req, res) => {
   projectData.push(dataPixabay);
   res.send(projectData);
 });
-// export server
+// finally export the server
 module.exports = server;
