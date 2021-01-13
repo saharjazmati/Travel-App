@@ -1,3 +1,16 @@
+.headline {
+    display: block;
+    margin: auto;
+    width: 95%;
+    height: 100%;
+    font-weight: bolder;
+    font-size: 50px;
+    color: #8b146f;
+    border: 5px solid #8b146f;
+    padding: 0.5em;
+    margin-bottom: 1em;
+  }
+
 body {
     background: #e2b0d6;
     font-family: Arial, Helvetica, sans-serif;
@@ -9,7 +22,7 @@ body {
       font-size: 18px;
       justify-content:center ;
       align-content:center ;
-      //border: 2px solid #9b0d7a;
+
     }
 
     #newEntry {
@@ -37,7 +50,6 @@ body {
     }
   
     button {
-      //display: block;
       width: 200px;
       height: 75px;
       background: #49073a;
@@ -59,41 +71,27 @@ body {
       color: #49073a
     }
   
-    /*textarea {
-      background: #22b2da;
-      color: #f0d43a;
-      font-size: 20px;
-      font-family: "Oswald", sans-serif;
-      position: relative;
-      margin-bottom: -2em;
-    }*/
-    /* Reset style for HTML element on active to have no border*/
+ 
     input:focus,
     select:focus,
     textarea:focus,
     button:focus {
       outline: none;
     }
-    /* Style for Placeholder Text*/
+
     ::placeholder {
-      /* Firefox, Chrome, Opera */
       color: #da9acb;
-      //font-family: "Oswald", sans-serif;
     }
   
     :-ms-input-placeholder {
-      /* Internet Explorer 10-11 */
       color: #e2b0d6;
-     // font-family: "Oswald", sans-serif;
     }
-  
+
     ::-ms-input-placeholder {
-      /* Microsoft Edge */
       color: #e2b0d6;
-    //  font-family: "Oswald", sans-serif;
     }
   }
-  
+
   @media (min-width: 901px) {
     #trip {
       display: grid;
@@ -107,4 +105,3 @@ body {
 
     }
   }
-  
