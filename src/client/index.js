@@ -7,7 +7,6 @@ import {
     postData,
   } from "./js/app.js";
   import "./styles/style.scss";
-  import "./styles/header.scss";
   import "./styles/output.scss";
 
   export {
