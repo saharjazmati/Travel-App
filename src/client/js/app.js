@@ -49,7 +49,7 @@ const performAction = async () => {
   document.getElementById("tripInfo").innerHTML = tripInformation;
   getFromGeoN(city)
     .then((data) => {
-      return postData("http://localhost:3030/geonames", {
+      return postData("http://localhost:7777/geonames", {
         latitude: data.geonames[0].lat,
         longitude: data.geonames[0].lng,
       });
@@ -63,7 +63,7 @@ const performAction = async () => {
       return getFromW_Bit(lat, lng);
     })
     .then((weatherData) => {
-      return postData("http://localhost:3030/weatherbit", {
+      return postData("http://localhost:7777/weatherbit", {
         high: weatherData.data[0].high_temp,
         low: weatherData.data[0].low_temp,
         description: weatherData.data[0].weather.description,
@@ -73,7 +73,7 @@ const performAction = async () => {
       return getFromPbay(city);
     })
     .then((data) => {
-      return postData("http://localhost:3030/pixabay", {
+      return postData("http://localhost:7777/pixabay", {
         image: data.hits[0].webformatURL,
       }).then(updateUI());
     });
@@ -81,10 +81,10 @@ const performAction = async () => {
 
 
 const updateUI = async () => {
-  const res = await fetch("http://localhost:3030/data");
+  const res = await fetch("http://localhost:7777/data");
   try {
     const allData = await res.json();
-    document.getElementById("details").innerHTML = `Weather Forecast <br> High: ${allData[allData.length - 2].high}, Low: ${allData[allData.length - 2].low} <br> ${allData[allData.length - 2].description}`;
+    document.getElementById("details").innerHTML = `<strong>Weather Forecast </strong> <br> High temprature: ${allData[allData.length - 2].high}, Low temprature: ${allData[allData.length - 2].low} <br> ${allData[allData.length - 2].description}<br> `;
     document.getElementById("image").src = allData[allData.length - 1].image;
   } catch (error) {
     console.log(error);
