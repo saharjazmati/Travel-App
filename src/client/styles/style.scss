@@ -5,16 +5,17 @@
     height: 100%;
     font-weight: bolder;
     font-size: 50px;
-    color: #8b146f;
-    border: 5px solid #8b146f;
+    color: #59117a;
+    border: 5px solid #59117a;
     padding: 0.5em;
     margin-bottom: 1em;
   }
 
 body {
-    background: #e2b0d6;
+    background: linear-gradient(to bottom, #b721ff, #2af598, #c05555, #fee140, #fa709a);
     font-family: Arial, Helvetica, sans-serif;
-  
+    background-repeat: no-repeat;
+
     #trip {
       display: grid;
       grid-auto-rows: minmax(60px, auto);
@@ -34,7 +35,7 @@ body {
     label {
       display: block;
       font-size: 30px;
-      color: #49073a;
+      color: #59117a;
       padding: 5px;
     }
 
@@ -43,12 +44,12 @@ body {
       height: 60px;
       width: 320px;
       background:white;
-      color:  #49073a;
+      color:  #b721ff;
       font-size: 22px;
       border: 3px solid ;
       margin: 5px;
     }
-  
+  /*
     button {
       width: 200px;
       height: 75px;
@@ -66,6 +67,56 @@ body {
       background-color:#8b146f;
       cursor: pointer;
     }
+    */
+    button {
+      padding: 0.75em 2em;
+      text-align: center;
+      text-decoration: none;
+      //text-transform: uppercase;
+      font-family: sans-serif;
+      color: #b721ff;
+      font-size: 30px;
+    //  display: inline-block;
+      margin: auto;
+      margin-top: 2em;
+      display: block;
+
+      border: 2px solid #b721ff;
+      border-radius: 0.3em;
+      transition: all 0.2s ease-in-out;
+    position: relative;
+      overflow: hidden;
+  }
+  button:before {
+      content: '';
+      background-color: #fa709a;
+      height: 100%;
+      width: 3em;
+      display: block;
+    position: absolute ;
+      top: 0;
+    left: -4.5em;
+      transform: skewX(-45deg) translateX(0);
+      transition: none;
+  }
+  button:hover {
+      background-color: #b721ff;
+      color: #fa709a;
+      border-bottom: 4px solid #ae2ceb;
+ }
+ button:hover:before {
+     transform: skewX(-45deg) translateX(13.5em);
+     transition: all 0.5s ease-in-out;
+ }
+ @keyframes sheen {
+     0% {
+         transform: skewY(-45deg) translateX(0);
+     }
+     100% {
+         transform: skewY(-45deg) translateX(12.5em);
+     }
+ }
+ //till here
     h1 {
       font-size: 40px;
       color: #49073a
