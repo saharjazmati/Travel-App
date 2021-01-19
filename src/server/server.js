@@ -13,8 +13,8 @@ app.use(cors());
 // Initialize dist folder
 app.use(express.static("dist"));
 
-// Setup the Server on 3030 port
-const port = 3030;
+// Setup the Server on 7777 port
+const port = 7777;
 const server = app.listen(port, () => {
   console.log(`running on port: ${port}`);
 });
