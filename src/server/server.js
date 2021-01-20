@@ -1,3 +1,4 @@
+// create an empty object to act as endpoint
 let projectData = [];
 const express = require("express");
 // Start up an instance
