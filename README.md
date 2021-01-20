@@ -25,14 +25,13 @@ you'll need to enter:
 
 
 ##  important files:
-app.js: it includes my API keys, the base URLs, all the above fuctions which are written in JS, eventlisteners...
-style.scss:it includes all the styling code for the main user interface
-output.scss: includes the styling code for the output that the user gets after hitting Submit button.
-server.js: for server setup useing express, project endpoint,dependencies,libraries, get and post routes, webpack dev server for developement ....etc
+- app.js: it includes my API keys, the base URLs, all the above fuctions which are written in JS, eventlisteners...etc
+- style.scss:it includes all the styling code for the main user interface
+- output.scss: includes the styling code for the output that the user gets after hitting Submit button.
+- server.js: for server setup useing express, project endpoint,dependencies,libraries, get and post routes, webpack dev server for developement ....etc
 
 ## server
 the app runs on port 7777.
-
 
 ## Reustls:
 Weather forcast
