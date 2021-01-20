@@ -3,6 +3,7 @@ const GeoNames_user = "sisisasa";
 const weatherBitKpi = "37312b9b3eac4ba3a484c04a78ae844c";
 const pixabayKey = "19823186-6d0fc87f33685ba4372bd9385";
 
+// geonames api function to get the latitude, longitude of the city
 const getFromGeoN = async (city) => {
     const url = `http://api.geonames.org/searchJSON?q=${city}&maxRows=1&username=${GeoNames_user}`;
     const res = await fetch(url);
@@ -13,7 +14,7 @@ const getFromGeoN = async (city) => {
       alert("GeoNames error!", error);
     }
   };
-  
+ // Weatherbit api function to pull in the weather 
   const getFromW_Bit = async (lat, lng) => {
     const url = `https://api.weatherbit.io/v2.0/forecast/daily?lat=${lat}&lon=${lng}&key=${weatherBitKpi}`;
     const res = await fetch(url);
@@ -24,7 +25,7 @@ const getFromGeoN = async (city) => {
       alert("WeatherBit error!", error);
     }
   };
-  
+// Pixabay API to get the city image
   const getFromPbay = async (city) => {
     const url = `https://pixabay.com/api/?key=${pixabayKey}&q=${city}&image_type=photo`;
     const res = await fetch(url);
@@ -36,6 +37,7 @@ const getFromGeoN = async (city) => {
     }
   };
   
+// Get city, travel and return dates from UI
 const performAction = async () => {
   // save city and dates values in variables 
   const city = document.getElementById("city").value;
@@ -79,7 +81,7 @@ const performAction = async () => {
     });
 };
 
-
+//update user interface with trip info, weather, image
 const updateUI = async () => {
   const res = await fetch("http://localhost:7777/data");
   try {
@@ -106,6 +108,7 @@ const postData = async (url = "", data = {}) => {
   }
 };
 
+// add event listerner to the submit button to perfrom the action on click
 document.addEventListener("DOMContentLoaded", () => {
   const button_submit = document.getElementById("done");
   button_submit.addEventListener("click", performAction);
