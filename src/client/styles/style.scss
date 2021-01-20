@@ -12,25 +12,30 @@
   }
 
 body {
-    background: linear-gradient(to bottom, #b721ff, #2af598, #c05555, #fee140, #fa709a);
+    background: linear-gradient(to bottom, #b721ff, #fee140);
+    //background: linear-gradient(to bottom, #b721ff, #2af598, #c05555, #fee140, #fa709a);
     font-family: Arial, Helvetica, sans-serif;
     background-repeat: no-repeat;
 
     #trip {
       display: grid;
-      grid-auto-rows: minmax(60px, auto);
+     // grid-auto-rows: minmax(60px, auto);
+      grid-template-rows: auto auto auto;
       grid-template-columns: auto;
+      grid-template-areas:
+      "city"
+      "From"
+      "To";
       font-size: 18px;
       justify-content:center ;
       align-content:center ;
 
     }
 
-    #newEntry {
+   /* #newEntry {
       display: block;
-      grid-area: main;
       justify-content: center;
-    }
+    }*/
 
     label {
       display: block;
@@ -38,7 +43,15 @@ body {
       color: #59117a;
       padding: 5px;
     }
-
+    .city {
+      grid-area: city;
+    }
+     .Ddate {
+       grid-area: From;
+     } 
+     .Rdate {
+       grid-area: To;
+     }
     input, textarea {
       display: block;
       height: 60px;
@@ -49,59 +62,37 @@ body {
       border: 3px solid ;
       margin: 5px;
     }
-  /*
-    button {
-      width: 200px;
-      height: 75px;
-      background: #49073a;
-      color: #e2b0d6;
-      font-size: 25px;
-      border: 1px solid #e2b0d6;
-      box-shadow: 2px 4px 5px #49073a;
-      margin: auto;
-      margin-top: 2em;
-      display: block;
-      
-    }
-    button:hover {
-      background-color:#8b146f;
-      cursor: pointer;
-    }
-    */
     button {
       padding: 0.75em 2em;
       text-align: center;
       text-decoration: none;
-      //text-transform: uppercase;
       font-family: sans-serif;
       color: #b721ff;
       font-size: 30px;
-    //  display: inline-block;
       margin: auto;
       margin-top: 2em;
       display: block;
-
       border: 2px solid #b721ff;
       border-radius: 0.3em;
       transition: all 0.2s ease-in-out;
-    position: relative;
+      position: relative;
       overflow: hidden;
   }
   button:before {
       content: '';
-      background-color: #fa709a;
+      background-color: #fee140;
       height: 100%;
       width: 3em;
       display: block;
-    position: absolute ;
+      position: absolute ;
       top: 0;
-    left: -4.5em;
+      left: -4.5em;
       transform: skewX(-45deg) translateX(0);
       transition: none;
   }
   button:hover {
       background-color: #b721ff;
-      color: #fa709a;
+      color: #fee140;
       border-bottom: 4px solid #ae2ceb;
  }
  button:hover:before {
@@ -116,7 +107,7 @@ body {
          transform: skewY(-45deg) translateX(12.5em);
      }
  }
- //till here
+
     h1 {
       font-size: 40px;
       color: #49073a
@@ -146,13 +137,20 @@ body {
   @media (min-width: 901px) {
     #trip {
       display: grid;
-      grid-auto-rows: minmax(50px, auto);
-      grid-template-columns: auto;
-      grid-template-areas: "main main main";
+      //grid-auto-rows: auto;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+      " full full full";
       font-size: 25px;
       align-items: center;
       justify-content:space-between ;
       align-content:space-between  ;
 
+    }    
+    #newEntry {
+      display: block;
+      grid-area: full;
+      justify-content: center;
     }
   }
